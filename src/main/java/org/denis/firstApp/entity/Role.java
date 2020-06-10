@@ -1,21 +1,23 @@
 package org.denis.firstApp.entity;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
-@Table(name = "person")
-public class Person extends PanacheEntityBase {
+@Table(name = "role")
+public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "person_id")
+    @Column(name = "role_Id")
     private Long id;
-    @Column(name = "person_name")
+    @Column(name = "role_name")
     private String name;
+    @Transient
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users = new HashSet<>();
 
-    public Person() {
+    public Role() {
     }
 
     public Long getId() {
@@ -34,17 +36,26 @@ public class Person extends PanacheEntityBase {
         this.name = name;
     }
 
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return id.equals(person.id) &&
-                name.equals(person.name);
+        Role role = (Role) o;
+        return id.equals(role.id) &&
+                name.equals(role.name) &&
+                users.equals(role.users);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, name, users);
     }
 }
