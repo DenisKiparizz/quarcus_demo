@@ -1,8 +1,14 @@
 package org.denis.firstApp.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import net.bytebuddy.build.ToStringPlugin;
+import org.apache.commons.lang3.builder.EqualsExclude;
+import org.apache.commons.lang3.builder.HashCodeExclude;
+import org.eclipse.sisu.Hidden;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
@@ -12,8 +18,13 @@ public class Person extends PanacheEntityBase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id")
     private Long id;
-    @Column(name = "person_name")
-    private String name;
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
+    @Column(name = "age")
+    @Size(min = 1, max = 100)
+    private int age;
 
     public Person() {
     }
@@ -26,12 +37,28 @@ public class Person extends PanacheEntityBase {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
@@ -39,12 +66,14 @@ public class Person extends PanacheEntityBase {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return id.equals(person.id) &&
-                name.equals(person.name);
+        return age == person.age &&
+                id.equals(person.id) &&
+                firstName.equals(person.firstName) &&
+                lastName.equals(person.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, firstName, lastName, age);
     }
 }

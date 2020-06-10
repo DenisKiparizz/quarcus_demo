@@ -6,13 +6,19 @@
     <changeSet id="2020-06-10--11:22" author="Denis Solodkiy">
 
         <insert tableName="person">
-            <column name="person_name" value="Denis"/>
+            <column name="first_name" value="Marsel"/>
+            <column name="last_name" value="Fray"/>
+            <column name="age" value="46"/>
         </insert>
         <insert tableName="person">
-            <column name="person_name" value="Kostia"/>
+            <column name="first_name" value="Josh"/>
+            <column name="last_name" value="Dorop"/>
+            <column name="age" value="24"/>
         </insert>
         <insert tableName="person">
-            <column name="person_name" value="Olga"/>
+            <column name="first_name" value="German"/>
+            <column name="last_name" value="Gesse"/>
+            <column name="age" value="77"/>
         </insert>
 
     </changeSet>
