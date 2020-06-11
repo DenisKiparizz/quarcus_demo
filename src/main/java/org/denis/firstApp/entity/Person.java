@@ -1,13 +1,8 @@
 package org.denis.firstApp.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-import net.bytebuddy.build.ToStringPlugin;
-import org.apache.commons.lang3.builder.EqualsExclude;
-import org.apache.commons.lang3.builder.HashCodeExclude;
-import org.eclipse.sisu.Hidden;
 
 import javax.persistence.*;
-import javax.validation.Valid;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 

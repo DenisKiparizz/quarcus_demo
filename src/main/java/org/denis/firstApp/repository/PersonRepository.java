@@ -3,12 +3,18 @@ package org.denis.firstApp.repository;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import org.denis.firstApp.dto.PersonDto;
 import org.denis.firstApp.entity.Person;
+import org.denis.firstApp.mapper.PersonMapper;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import java.util.List;
 
 @ApplicationScoped
 public class PersonRepository implements PanacheRepository<Person> {
+
+    @Inject
+    PersonMapper personMapper ;
+
     public Person getById(Long id) {
         return findById(id);
     }
@@ -17,8 +23,10 @@ public class PersonRepository implements PanacheRepository<Person> {
         return findAll().list();
     }
 
-    public void save(Person person) {
-        person.persist();
+    public void save(PersonDto person) {
+        personMapper
+                .mapToPerson(person)
+                .persist();
     }
 
     public void remove(Long id) {

@@ -32,7 +32,7 @@ public class PersonController {
 
     @POST
     @Transactional
-    public void add(@Valid Person person) {
+    public void add(@Valid PersonDto person) {
         personRepository.save(person);
     }
 
