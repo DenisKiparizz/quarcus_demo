@@ -1,91 +1,52 @@
 package org.denis.firstApp.entity;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import io.quarkus.mongodb.panache.MongoEntity;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
-@Entity
-@Table(name = "users")
+@MongoEntity(collection = "users")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_Id")
-    private Long id;
+    private String id;
+    private String userName;
+    private List<Course> courses = new ArrayList<>();
 
-    @Column(name = "user_name")
-    private String name;
+    public User(String id, String userName, List<Course> courses) {
+        this.id = id;
+        this.userName = userName;
+        this.courses = courses;
+    }
 
-    @Column(name = "password")
-    private String password;
+    public List<Course> getCourses() {
+        return courses;
+    }
 
-    @Transient
-    private String passwordConfirm;
+    public List<Course> getCoursesByName(String name) {
+        return courses.stream()
+                .filter(course -> course.getName().equalsIgnoreCase(name))
+                .collect(Collectors.toList());
+    }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "user_Id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "role_Id"))
-
-    private Set<Role> roles = new HashSet<>();
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     public User() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPasswordConfirm() {
-        return passwordConfirm;
-    }
-
-    public void setPasswordConfirm(String passwordConfirm) {
-        this.passwordConfirm = passwordConfirm;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id.equals(user.id) &&
-                name.equals(user.name) &&
-                password.equals(user.password) &&
-                passwordConfirm.equals(user.passwordConfirm) &&
-                roles.equals(user.roles);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, password, passwordConfirm, roles);
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
