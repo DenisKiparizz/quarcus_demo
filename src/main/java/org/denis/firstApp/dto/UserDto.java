@@ -1,17 +1,18 @@
 package org.denis.firstApp.dto;
 
-import org.denis.firstApp.entity.Course;
+import org.denis.firstApp.entity.UserCourses;
+import java.util.List;
 
 public class UserDto {
     private String name;
-    private Course course;
-
-    public UserDto(String name, Course course) {
-        this.name = name;
-        this.course = course;
-    }
+    private List<UserCourses> course;
 
     public UserDto() {
+    }
+
+    public UserDto(String name, List<UserCourses> course) {
+        this.name = name;
+        this.course = course;
     }
 
     public String getName() {
@@ -22,11 +23,11 @@ public class UserDto {
         this.name = name;
     }
 
-    public Course getCourse() {
+    public List<UserCourses> getCourse() {
         return course;
     }
 
-    public void setCourse(Course course) {
+    public void setCourse(List<UserCourses> course) {
         this.course = course;
     }
 }

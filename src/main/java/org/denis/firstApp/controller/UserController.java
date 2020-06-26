@@ -1,9 +1,9 @@
 package org.denis.firstApp.controller;
 
 import org.denis.firstApp.dto.UserDto;
+import org.denis.firstApp.entity.CoursesEnum;
 import org.denis.firstApp.entity.User;
 import org.denis.firstApp.repository.UserRepository;
-
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -11,7 +11,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/rest")
+@Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserController {
@@ -26,7 +26,7 @@ public class UserController {
 
     @POST
     @Transactional
-    public void add(@Valid User person) {
+    public void add(@Valid UserDto person) {
         userRepository.save(person);
     }
 
@@ -51,14 +51,14 @@ public class UserController {
     }
 
     @GET
-    @Path("/{name}")
+    @Path("name/{name}")
     public User getByName(@PathParam("name") String name) {
         return userRepository.findByName(name);
     }
 
     @GET
     @Path("course/{course}")
-    public List<User> getByCourse(@PathParam("course") String course) {
+    public List<User> getByCourse(@PathParam("course") CoursesEnum course) {
         return userRepository.findByCourse(course);
     }
 }
