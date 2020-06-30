@@ -1,0 +1,120 @@
+{
+  "first_name": "Bruce",
+  "last_name": "Willis",
+  "learner_id": "f974b581-537f-4f41-89e9-194669cac0bd",
+  "division": "Java",
+  "learning_paths": [
+    {
+      "name": "JS",
+      "description": "Course about JavaScript",
+      "learning_path_id": "862e3aea-77a3-4a3d-a831-34621582efca",
+      "mark": "90",
+      "start_timestamp": "2020-05-23T03:00:00",
+      "end_timestamp": "2020-06-23T03:00:00",
+      "status": "IN_PROGRESS",
+      "materials": [
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efkl",
+          "sequence_number": 1,
+          "title": "JavaScript Basics",
+          "type": "VIDEO",
+          "image": "image_link_2",
+          "link": "video_link_1",
+          "description": "some description",
+          "status": "IN_PROGRESS"
+        },
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efkk",
+          "sequence_number": 2,
+          "title": "Learn JavaScript in 10 minutes",
+          "type": "VIDEO",
+          "image": "image_link_3",
+          "link": "video_link_2",
+          "description": "some description",
+          "status": "IN_PROGRESS"
+        },
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efjj",
+          "sequence_number": 3,
+          "title": "w3schools.com JavaScript Certification",
+          "type": "CERTIFICATION",
+          "image": "image_link_4",
+          "link": "certification_link_1",
+          "description": "some description",
+          "status": "COMPLETED"
+        },
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efyy",
+          "sequence_number": 4,
+          "title": "Free JS course on Udemy.com",
+          "type": "COURSE",
+          "image": "image_link_5",
+          "link": "course_link_1",
+          "description": "some description",
+          "status": "NOT_STARTED"
+        },
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efjy",
+          "sequence_number": 5,
+          "title": "w3schools.com full JavaScript course",
+          "type": "COURSE",
+          "image": "image_link_6",
+          "link": "course_link_2",
+          "description": "some description",
+          "status": "NOT_STARTED"
+        }
+      ]
+    },
+    {
+      "name": "AWS",
+      "description": "AWS. Basics",
+      "learning_path_id": "862e3aea-77a3-4a3d-a831-34621582efff",
+      "mark": "90",
+      "start_timestamp": "2020-05-23T08:00:00",
+      "end_timestamp": "2020-07-23T11:00:00",
+      "status": "COMPLETED",
+      "materials": [
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efnm",
+          "sequence_number": 1,
+          "title": "AWS in 5 minutes",
+          "type": "VIDEO",
+          "image": "image_link_8",
+          "link": "video_link_3",
+          "description": "some description",
+          "status": "COMPLETED"
+        },
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efop",
+          "sequence_number": 2,
+          "title": "AWS Amazon Certification",
+          "type": "CERTIFICATION",
+          "image": "image_link_9",
+          "link": "certification_link_2",
+          "description": "some description",
+          "status": "COMPLETED"
+        },
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efgh",
+          "sequence_number": 3,
+          "title": "AWS Certification Minsk",
+          "type": "CERTIFICATION",
+          "image": "image_link_10",
+          "link": "certification_link_3",
+          "description": "some description",
+          "status": "COMPLETED"
+        },
+        {
+          "material_id": "862e3aea-77a3-4a3d-a831-34621582efqx",
+          "sequence_number": 4,
+          "title": "AWS full course on Udemy.com",
+          "type": "COURSE",
+          "image": "image_link_11",
+          "link": "course_link_3",
+          "description": "some description",
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  ]
+}

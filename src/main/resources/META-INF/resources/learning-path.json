@@ -1,0 +1,55 @@
+{
+  "name": "JavaScript",
+  "description": "Course about JavaScript",
+  "learning_path_id": "862e3aea-77a3-4a3d-a831-34621582efca",
+  "image": "image_link_1",
+  "link": "learning_path_link_1",
+  "materials": [
+    {
+      "material_id": "862e3aea-77a3-4a3d-a831-34621582efkl",
+      "sequence_number": 1,
+      "title": "JavaScript Basics",
+      "type": "VIDEO",
+      "image": "image_link_2",
+      "link": "video_link_1",
+      "description": "some description"
+    },
+    {
+      "material_id": "862e3aea-77a3-4a3d-a831-34621582efkk",
+      "sequence_number": 2,
+      "title": "Learn JavaScript in 10 minutes",
+      "type": "VIDEO",
+      "image": "image_link_3",
+      "link": "video_link_2",
+      "description": "some description"
+    },
+    {
+      "material_id": "862e3aea-77a3-4a3d-a831-34621582efjj",
+      "sequence_number": 3,
+      "title": "w3schools.com JavaScript Certification",
+      "type": "CERTIFICATION",
+      "image": "image_link_4",
+      "link": "certification_link_1",
+      "description": "some description"
+    },
+    {
+      "material_id": "862e3aea-77a3-4a3d-a831-34621582efyy",
+      "sequence_number": 4,
+      "title": "Free JS course on Udemy.com",
+      "type": "COURSE",
+      "image": "image_link_5",
+      "link": "course_link_1",
+      "description": "some description"
+    },
+    {
+      "material_id": "862e3aea-77a3-4a3d-a831-34621582efjy",
+      "sequence_number": 5,
+      "title": "w3schools.com full JavaScript course",
+      "type": "COURSE",
+      "image": "image_link_6",
+      "link": "cource_link_2",
+      "description": "some description"
+    }
+  ]
+}
+
